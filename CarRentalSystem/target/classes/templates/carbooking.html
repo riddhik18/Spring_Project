@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental booking Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin-bottom: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        #successMessage {
+            color: #008000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h1>Car Rental booking Form</h1>
+
+        <form id="carRentalForm">
+            <label for="carBrand">Car Brand:</label>
+            <select id="carBrand" name="carBrand" required>
+                <option value="select">Select</option>
+                <option value="toyota">Toyota</option>
+                <option value="honda">Honda</option>
+                <option value="ford">Ford</option>
+            </select>
+
+            <label for="carModel">Car Model:</label>
+            <select id="carModel" name="carModel" required>
+                <option value="select">Select</option>
+                <option value="camry">Camry</option>
+                <option value="corolla">Corolla</option>
+                <option value="accord">Accord</option>
+                <option value="civic">Civic</option>
+                <option value="mustang">Mustang</option>
+                <option value="explorer">Explorer</option>
+            </select>
+
+            <label for="customerName">Customer Name:</label>
+            <input type="text" id="customerName" name="customerName" required>
+
+            <label for="rentalStartDate">Rental Start Date:</label>
+            <input type="date" id="rentalStartDate" name="rentalStartDate" required>
+
+            <label for="rentalEndDate">Rental End Date:</label>
+            <input type="date" id="rentalEndDate" name="rentalEndDate" required>
+
+            <label for="paymentStatus">Payment Status:</label>
+            <select id="paymentStatus" name="paymentStatus" required>
+                <option value="select">Select</option>
+                <option value="paid">Paid</option>
+                <option value="unpaid">Unpaid</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <p id="successMessage"></p>
+    </div>
+
+    <script>
+        document.getElementById("carRentalForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+            document.getElementById("successMessage").textContent = "Car rental request submitted successfully";
+        });
+    </script>
+</body>
+</html>
